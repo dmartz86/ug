@@ -1,0 +1,30 @@
+.container
+  div(ng-controller='Controller')
+    h1(ng-bind="title")
+
+    .jumbotron
+      p Insert a number of keys to generate
+      .row
+        .col-md-3
+          input.form-control.input-lg(ng-model="units", type="number", placeholder="1 .. 1000")
+        .col-md3
+          a.btn.btn-primary.btn-lg(ng-click="generate()") Generate
+      .row(ng-show="uuids.length", style)
+        hr
+        .keys-generated
+          table.table.table-condensed.table-striped.table-bordered
+            tr
+              th #
+              th Key
+              th Actions
+            tr(ng-repeat='(idx,k) in uuids')
+              td
+                div(align='center')
+                  span(ng-bind='idx+1')
+              td
+                div(align='center')
+                  span(ng-bind='k')
+              td
+            tr(ng-show='uuids.length==0')
+              td(colspan='3')
+                div(align='center') No keys generated
