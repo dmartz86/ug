@@ -1,15 +1,17 @@
 .container
-  div(ng-controller='Controller')
-    h1(ng-bind="title")
+  div(ng-controller='Generator')
+    h1(ng-bind='title')
 
     .jumbotron
-      p Insert a number of keys to generate
+      p Insert the number of keys
       .row
         .col-md-3
-          input.form-control.input-lg(ng-model="units", type="number", placeholder="1 .. 1000")
+          input.form-control.input-lg(ng-model='units', type='number',
+            ng-keyup="$event.keyCode == 13 ? generate() : null",
+            placeholder='1 .. 1000', autofocus='')
         .col-md3
-          a.btn.btn-primary.btn-lg(ng-click="generate()") Generate
-      .row(ng-show="uuids.length", style)
+          a.btn.btn-primary.btn-lg(ng-click='generate()') Generate
+      .row(ng-show='uuids.length', style)
         hr
         .keys-generated
           table.table.table-condensed.table-striped.table-bordered

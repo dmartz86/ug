@@ -1,6 +1,6 @@
 {
-  "name": "seed",
-  "version": "0.0.1",
+  "name": "ug",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -8,8 +8,7 @@
   "dependencies": {
     "express": "*",
     "jade": "*",
-    "uuid": "*",
-    "times": "*"
+    "uuid": "*"
   },
   "author": "MNA",
   "license": "MIT"

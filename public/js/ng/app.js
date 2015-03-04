@@ -1,2 +1,2 @@
 
-var app = angular.module('SeedApp', ['ng']);
+var app = window.angular.module('UUIDGeneratorApp', ['ng']);
