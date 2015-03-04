@@ -3,3 +3,7 @@
   height: 200px;
   overflow-y: scroll;
 }
+.blank-space {
+  height: 40px;
+  widht: 100%;
+}
