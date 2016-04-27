@@ -1,9 +1,10 @@
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var uuid = require('uuid');
+'use strict';
+const express = require('express');
+const http = require('http');
+const path = require('path');
+const uuid = require('uuid');
 
-var app = express();
+const app = express();
 
 // all environments
 app.set('port', process.env.PORT || 1803);
@@ -15,27 +16,28 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.get('/generate/:units', function(req, res) {
-  var uuidList = [];
-  var limit = 1000;
-  var units = parseInt(req.params.units);
-  var startTime = new Date().getTime();
+app.get('/generate/:units', generate);
+
+function generate(req, res) {
+  const uuid = require('uuid');
+  const uuidList = [];
+  const limit = 1000;
+  const units = parseInt(req.params.units);
 
   if ( units > 0 ){
     if ( units >limit ){ units = limit;}
-    for ( var i = 0; i < units; i++ ) {
+    for ( let i = 0; i < units; i++ ) {
       uuidList.push(uuid.v4());
     }
   }
 
-  var endTime = new Date().getTime();
   res.json(
     {
       uuids: uuidList,
-      time: (endTime - startTime)
+      ts: new Date().getTime()
     }
   );
-});
+}
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
