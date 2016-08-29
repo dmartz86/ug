@@ -1,15 +1,13 @@
 {
   "name": "ug",
-  "version": "0.0.2",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "*",
-    "jade": "*",
-    "uuid": "*"
+    "express": "latest"
   },
-  "author": "MNA",
+  "author": "Daniel Martinez",
   "license": "MIT"
 }

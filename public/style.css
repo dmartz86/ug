@@ -1,0 +1,46 @@
+.navbar {
+  margin-bottom: 0;
+}
+.outer-item {
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 2px;
+  margin: 4px;
+}
+uuid-item {
+  text-align: center;
+}
+uuid-item .left-item, uuid-item .right-item {
+  flex: 1;
+  font-size: 20px;
+}
+uuid-item .left-item .btn, uuid-item .right-item .btn {
+  height: 74px;
+}
+uuid-item .center-item {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  flex: 4;
+  padding: 4px;
+}
+uuid-item .center-item .chunk-item {
+  flex: 1;
+}
+.actions {
+  display: flex;
+  overflow-x: scroll;
+}
+.actions .btn {
+  flex: 1;
+}
+.bullet h5{
+  width: 64px;
+}
+.uuid-text {
+  width: 100%;
+  font-size: 40px;
+}
+.footer {
+  text-align: center;
+  width: 100%;
+}

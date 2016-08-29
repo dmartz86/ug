@@ -1,0 +1,4 @@
+<div class="actions">
+  <button class="btn btn-primary" ng-repeat="range in generator.ranges" ng-click="generator.generate(range)">{{range}}U</button>
+</div>
+<uuid-item ng-repeat="item in generator.items" item="item" position="$index"></uuid-item>

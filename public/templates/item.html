@@ -1,0 +1,30 @@
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="outer-item" ng-if="!it.active">
+    <div class="left-item bullet">
+      <h5 ng-bind="it.position"></h5>
+      <h5 ng-bind="it.c"></h5>
+    </div>
+    <div class="center-item">
+      <h5 class="chunk-item" ng-bind="it.a"></h5>
+      <h5 class="chunk-item" ng-bind="it.e"></h5>
+    </div>
+    <div class="right-item bullet">
+      <h5 class="chunk-item" ng-bind="it.b"></h5>
+      <h5 class="chunk-item" ng-bind="it.d"></h5>
+    </div>
+    <div class="right-item" ng-click="it.select()">
+      <button class="btn btn-primary">❱</button>
+    </div>
+  </div>
+  <div class="outer-item" ng-if="it.active">
+    <div class="left-item" ng-click="it.light(it.item)">
+      <button class="btn btn-primary">✓</button>
+    </div>
+    <div class="center-item">
+      <input id="{{it.item}}" value="{{it.item}}" class="uuid-text"/>
+    </div>
+    <div class="right-item" ng-click="it.select()">
+      <button class="btn btn-primary">❰</button>
+    </div>
+  </div>
+</div>
